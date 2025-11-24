@@ -13,3 +13,14 @@ Write-Host "------------ Host down ------------ "
 foreach ($ip_down in $ips_down){
     Write-Host "-", $ip_down
 }
+
+##################################################################
+
+$ports = @("80", "443")
+foreach ($port in $ports){
+    Test-NetConnection -ComputerName "google.com" -Port $port
+}
+
+##################################################################
+
+Test-NetConnection -ComputerName '8.8.8.8' -TraceRoute
